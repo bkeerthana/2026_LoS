@@ -79,4 +79,8 @@ Day-3:
   
   More on shopt: help shopt
 
-  
+  Examples: 
+  ls *.@(txt|pdf)
+  ls *.!(gif|jpg) 
+
+  ls +(a).txt
