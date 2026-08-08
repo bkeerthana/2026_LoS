@@ -1,0 +1,15 @@
+1. What If There Were No Operating System?
+Imagine a computer without an operating system. Identify the problems a user would face and investigate how OS features solve them. Demonstrate at least three features using Linux and present a *“Without OS vs With OS”* comparison.                                                                                                                                
+
+
+2. Imagine your team is setting up a cybersecurity laboratory. Explore at least five Linux distributions relevant to cybersecurity and recommend suitable distributions for different roles such as penetration testing, digital forensics, privacy, and security monitoring. Present your findings creatively as a comparison chart, poster, infographic, or “OS selection guide.” 
+
+3. Exit status: 
+ Execute at least five Linux commands that produce both successful and unsuccessful results. Investigate their exit status using `$?`.
+ Create a simple visual/table showing *Command → Result Exit Status → Meaning*.
+ What can a script learn from an exit status?                   
+
+Deadline: 14.08.2026
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+You don’t have to be great to start, but you have to start to be great.
+– Zig Ziglar                                                                                             |                                                                                       
