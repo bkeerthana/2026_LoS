@@ -61,8 +61,22 @@ Day-3:
   man 7 glob 
   blog: https://www.linuxjournal.com/content/bash-extended-globbing
 
+  Explore: 
+  shopt  --------> shell options 
+  
+  To check globbing is enabled or not 
+  shopt extglob
+
   To enable ** 
   shopt -s globstar
   ls **/*.txt
+
+  To check what are the other shell options 
+  shopt 
+  
+  To set -s 
+  To unset -u 
+  
+  More on shopt: help shopt
 
   
