@@ -60,4 +60,9 @@ Day-3:
   man bash
   man 7 glob 
   blog: https://www.linuxjournal.com/content/bash-extended-globbing
-           
+
+  To enable ** 
+  shopt -s globstar
+  ls **/*.txt
+
+  
