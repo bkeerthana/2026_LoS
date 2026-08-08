@@ -48,5 +48,16 @@ Lab-1:
    - Getting Help 
    - Intro to exit status 
 
-
+Day-3: 
+    - Globbing 
+    - Notations 
+                Basic globbing:      *  ?  [...] [[:  :]] [^ ] [! ] 
+                Extended globbing:   ?()  *()  +()  @()  !()   [Next Class]
+                Recursive globbing:  **                        [Next Class]
+                Brace expansion:     {a,b}  {1..10} 
+   
+  Refer: 
+  man bash
+  man 7 glob 
+  blog: https://www.linuxjournal.com/content/bash-extended-globbing
            
