@@ -85,7 +85,39 @@ Day-3:
 
   ls +(a).txt
 
+Day-4: 
+Extended globbing 
+          @(pattern list) 
+head 
+tail 
+wc 
+pipe 
 
+
+Day-5 + Lab 2
+Extended globbing 
+          !(pattern list)
+grep 
+   -i 
+   -c
+   -o
+   -w
+   -A#
+   -B#
+   -C#
+   -f
+   -e
+   -h 
+   -l 
+   -n 
+   -q 
+
+Shell script using 
+  $? 
+  constructs - conditional statements 
+  grep 
+
+Intro to Regex 
 
 Videos: 
 https://www.youtube.com/watch?v=_n5ZegzieSQ
