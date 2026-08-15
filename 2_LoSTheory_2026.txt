@@ -1,0 +1,30 @@
+Compare Permissions on Regular Files and Directories
+
+Create a regular file named sample.txt and a directory named sample_dir. Create at least one file inside sample_dir.
+
+Apply each of the following permissions using chmod. Perform the specified operations and record your observations.
+
+Note: Perform the exercise as a normal user. Do not use sudo.
+
+Permission	Regular File (sample.txt) – Test	Observation	Directory (sample_dir) – Test	Observation
+400 (r--)	Try to read and modify the file	__________	Try to list and enter the directory	__________
+200 (-w-)	Try to read and modify the file	__________	Try to list, enter, and create a file	__________
+100 (--x)	Try to read and execute the file	__________	Try to list and enter the directory	__________
+500 (r-x)	Try to read and modify the file	__________	Try to list and enter the directory	__________
+600 (rw-)	Try to read and modify the file	__________	Try to list, enter, and create a file	__________
+700 (rwx)	Try to read, modify, and execute the file	__________	Try to list, enter, create, and delete files	__________
+
+Questions
+What does read (r) permission allow you to do with a regular file?
+What does read (r) permission allow you to do with a directory?
+What does write (w) permission mean for a regular file?
+What does write (w) permission mean for a directory?
+What does execute (x) permission mean for a regular file?
+Why is execute (x) permission important for accessing a directory?
+Which permission combination allows the owner to fully access a regular file?
+Which permission combination allows the owner to fully access a directory?
+Based on your observations, explain why the same r, w, and x permissions behave differently for a regular file and a directory.
+
+
+Deadline: 
+22.8.2026
