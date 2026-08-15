@@ -28,3 +28,6 @@ Based on your observations, explain why the same r, w, and x permissions behave 
 
 Deadline: 
 22.8.2026
+
+“The future is still in my hands.”
+                                                     - Subhas Chandra Bose
