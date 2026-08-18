@@ -154,6 +154,15 @@ File operators
     [ ] vs [[ ]] 
 
 Next class: 
+# Using [[ ]] with && and || inside
+[[ condition1 && condition2 ]]     # AND
+[[ condition1 || condition2 ]]     # OR
+
+# Negation
+[ ! condition ]                    # NOT
+[[ ! condition ]]                  # NOT
+
+
 Explore: 
    -b 
    -c 
