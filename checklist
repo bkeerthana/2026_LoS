@@ -119,6 +119,36 @@ Shell script using
 
 Intro to Regex 
 
+Day-6: 
+Recap 
+   grep and its options
+   -v 
+
+grep + Regex 
+   To search complex patterns 
+
+File operators 
+   -f  --- regular file
+   -e  --- exists 
+   -d  --- directory 
+   -r  --- read
+   -w  --- write
+   -x  --- execute
+   -s  --- not empty
+
+ constructs 
+    if 
+    if else 
+    nested if 
+
+    test or [ 
+    [ ] vs [[ ]] 
+ 
+Explore: 
+   -z
+   -nt 
+   -ot 
+
 Videos: 
 https://www.youtube.com/watch?v=_n5ZegzieSQ
 https://www.youtube.com/watch?v=SPwyp2NG-bE&list=PLIhvC56v63IKioClkSNDjW7iz-6TFvLwS
