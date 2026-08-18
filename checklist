@@ -115,7 +115,16 @@ grep
 Shell script using 
   $? 
   constructs - conditional statements 
-  grep 
+
+# Integer comparison (use with [ ] or [[ ]])
+[ "$num1" -eq "$num2" ]   # Equal
+[ "$num1" -ne "$num2" ]   # Not equal
+[ "$num1" -lt "$num2" ]   # Less than
+[ "$num1" -le "$num2" ]   # Less than or equal
+[ "$num1" -gt "$num2" ]   # Greater than
+[ "$num1" -ge "$num2" ]   # Greater than or equal
+
+grep 
 
 Intro to Regex 
 
@@ -143,11 +152,22 @@ File operators
 
     test or [ 
     [ ] vs [[ ]] 
- 
+
+Next class: 
 Explore: 
+   -b 
+   -c 
    -z
    -nt 
    -ot 
+
+ checking multiple conditions 
+ -a  -o 
+ && || !
+
+[ -z "$empty" ]          # True if string is empty (zero length)
+[ -n "$str1" ]           # True if string is not empty
+
 
 Videos: 
 https://www.youtube.com/watch?v=_n5ZegzieSQ
