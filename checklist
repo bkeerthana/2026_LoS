@@ -136,6 +136,9 @@ Recap
 grep + Regex 
    To search complex patterns 
 
+   [ ]  - character class
+  
+
 File operators 
    -f  --- regular file
    -e  --- exists 
