@@ -1,0 +1,421 @@
+Part A — Basic grep
+Exercise 1 — Search File Contents
+
+Using payload.sh:
+
+Find the line containing wget.
+Find the line containing nc.
+Find the line containing chmod.
+Search for WGET ignoring case.
+Display the line numbers containing /tmp.
+Count the number of lines containing /tmp.
+Display only the matched word wget.
+Search for nc as a whole word.
+
+
+Exercise 2 — Compare Files
+
+Search for wget in:
+
+payload.sh
+update.sh
+cleanup.sh
+
+Answer:
+
+Which file contains wget?
+Which files do not contain wget?
+Repeat the search for /tmp.
+Which files contain /tmp?
+Use grep with multiple filenames.
+
+Exercise 3 — Inverse Search
+
+Using system.log:
+
+Display all lines that do not contain INFO.
+Display all lines that do not contain ERROR.
+Display all lines except those containing WARNING.
+Count the number of non-INFO entries.
+
+
+Part B — Security Log Analysis
+Exercise 4 — Analyze system.log
+
+Using grep:
+
+Find all ERROR entries.
+Find all WARNING entries.
+Find the FAILED entry.
+Count the number of ERROR entries.
+Display line numbers containing WARNING.
+Search for error irrespective of case.
+Determine whether the word Malware occurs in the file without displaying output.
+
+
+
+Exercise 5 — Context Investigation
+
+An ERROR event has been detected in system.log.
+
+Display two lines after each ERROR.
+Display two lines before each ERROR.
+Display one line before and one line after each ERROR.
+Display two lines around FAILED.
+Why can examining events before and after an error be useful during incident investigation?
+
+Part C — egrep / grep -E
+
+
+Exercise 6 — Search Multiple Security Events
+
+Using system.log, write a single command to find lines containing:
+
+ERROR
+WARNING
+FAILED
+
+
+Exercise 7 — Multiple Suspicious Commands
+
+Using payload.sh, search for any of:
+
+wget
+curl
+nc
+chmod
+
+using a single extended regular expression.
+
+Answer:
+
+Which patterns were found?
+Which pattern was not found?
+How many lines contain at least one of these patterns?
+Exercise 8 — Search Multiple Files
+
+Which files contain at least one selected command?
+Display only the filenames containing matches.
+Display matching lines with line numbers.
+Count the matching lines in each file.
+
+
+
+Part D — patterns.txt
+
+Your dataset already contains patterns.txt.
+
+Exercise 9 — Pattern File Investigation
+
+Use patterns.txt to:
+
+Search payload.sh.
+Search system.log.
+Search config.conf.
+Search all .sh files.
+Display only filenames containing at least one pattern from patterns.txt.
+Display matching lines without printing filenames.
+Which files contain indicators listed in patterns.txt?
+
+Part E — Regex Using filelist.txt
+Exercise 10 — Beginning and End of Line
+
+Using filelist.txt:
+
+Find filenames beginning with malware.
+Find filenames beginning with script.
+Find filenames ending in .sh.
+Find filenames ending in .py.
+Find filenames ending in .log.
+Find filenames beginning with p and ending in .sh.
+
+
+Exercise 11 — Character Classes
+
+Using filelist.txt:
+
+Find malware1.sh and malware2.sh using one pattern.
+Find filenames containing a digit.
+Find filenames containing digits 1 or 2.
+Find filenames beginning with m or p.
+Find filenames beginning with s or u.
+
+Exercise 12 — Negated Character Classes
+
+Using filelist.txt:
+
+Find filenames that do not begin with m.
+Find filenames that do not begin with m or p.
+Find malware filenames where the character following malware is not a digit.
+
+Part F — File Operators
+
+
+Exercise 13 — 
+
+Write a shell script that accepts a filename and determines whether it exists.
+
+Test with:
+
+payload.sh
+report.txt
+unknown.sh
+
+
+Write a script that accepts a path and determines whether it is:
+
+a regular file,
+a directory,
+or neither.
+
+Test with:
+
+payload.sh
+system.log
+quarantine
+backup
+unknown
+
+Exercise 15 
+
+Write a script that reports whether a selected file is:
+
+readable,
+writable,
+executable.
+
+Test with:
+
+payload.sh
+update.sh
+report.txt
+config.conf
+
+Expected style of output:
+
+File: payload.sh
+
+
+Readable   : Yes
+Writable   : Yes
+Executable : Yes
+
+
+
+Exercise 16 — 
+
+Compare:
+
+payload.sh
+empty.txt
+
+Write a script that determines whether each file contains data.
+
+Display:
+
+File contains data
+
+or:
+
+File is empty
+
+
+
+Part G 
+Exercise 17 — File Validation Using [ ]
+
+Write a script that accepts a filename and checks:
+
+Does it exist?
+Is it a regular file?
+Is it readable?
+Is it non-empty?
+
+
+Exercise 18 — [ ] + grep
+
+Write a script with the following logic:
+
+Does file exist?
+       ↓
+Is it a regular file?
+       ↓
+Is it readable?
+       ↓
+Is it non-empty?
+       ↓
+Search for "wget"
+
+If wget is detected, display:
+
+Selected indicator detected – investigate further
+
+Otherwise:
+
+Selected indicator not detected
+
+Test using both:
+
+payload.sh
+update.sh
+
+
+Part H 
+Exercise 19 — Repeat File Tests Using [[ ]]
+
+Repeat Exercise 17 using:
+
+
+Exercise 20 — Regex Using [[ ]]
+
+Write a shell script that accepts a filename and checks whether the filename ends with .sh.
+
+Use:
+
+[[ "$filename" =~ regex ]]
+
+Display:
+
+Shell script identified for inspection
+
+or:
+
+File does not have a .sh extension
+
+Test:
+
+payload.sh
+scanner.py
+report.txt
+
+Exercise 21 — Multiple Extensions Using [[ ]]
+
+Extend the previous script to identify:
+
+.sh
+.py
+.pl
+
+files.
+
+Test:
+
+payload.sh
+scanner.py
+report.txt
+config.conf
+
+Do not classify these as malicious. Display:
+
+Script file – inspect if required
+Part I — grep + File Operators + Constructs
+Exercise 22 — Executable File Content Analysis
+
+Write a script that:
+
+Accepts a filename.
+Checks whether it exists.
+Checks whether it is a regular file.
+Checks whether it is executable.
+If executable, searches for wget
+
+Test with:
+
+payload.sh
+update.sh
+report.txt
+
+
+
+Exercise 23 — egrep + File Operators
+
+Write a script that performs content analysis only when the selected file is:
+
+a regular file,
+readable,
+non-empty.
+
+If the checks succeed, use egrep/grep -E to search for:
+
+wget|curl|nc|chmod
+
+Display:
+
+One or more selected indicators detected
+
+if a match occurs.
+
+Otherwise:
+
+Selected indicators not detected
+
+Part J — Configuration File Investigation
+Exercise 24 — Sensitive Information Search
+
+Use config.conf.
+
+First verify that it:
+
+exists,
+is a regular file,
+is readable,
+is non-empty.
+
+Then use egrep to search for:
+
+password|username
+
+Display the matching lines.
+
+
+Why should configuration files containing authentication information receive additional protection?
+
+Part K
+Exercise 25 — Suspicious File Triage
+
+Write a Bash program called:
+
+file_check.sh
+
+The program should ask the user to enter a filename.
+
+It should:
+
+Determine whether the path exists.
+Determine whether it is a regular file.
+Determine whether it is a directory.
+If it is a regular file, determine whether it is readable.
+Determine whether it is writable.
+Determine whether it is executable.
+Determine whether it is empty/non-empty.
+If readable and non-empty, use grep to search for wget.
+Use egrep/grep -E to search for wget|curl|nc|chmod.
+Use $? to determine whether a selected search succeeded.
+Use [[ ]] with regex to determine whether the filename ends in .sh.
+Display a summary of the findings.
+
+Example:
+
+Enter filename: payload.sh
+
+
+----- FILE INVESTIGATION -----
+
+
+Exists        : Yes
+Regular File  : Yes
+Directory     : No
+Readable      : Yes
+Writable      : Yes
+Executable    : Yes
+Non-empty     : Yes
+Shell Script  : Yes
+
+
+wget          : Found
+Selected indicators : Found
+
+
+Further inspection recommended
+
+"A winner is a dreamer who never gives up." — Nelson Mandela
