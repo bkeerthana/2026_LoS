@@ -1,1 +1,437 @@
 
+# Linux Filesystem 
+
+## Exercise 1 – Identify Your Linux Filesystem
+
+Explore the storage configuration of your Linux system.
+
+Determine:
+
+1. The storage devices available.
+2. The partitions available on each device.
+3. The filesystem type used by each partition.
+4. The device/partition on which `/` is located.
+5. The filesystem type used for `/`.
+6. The total, used, and available storage space.
+
+**Suggested commands:**
+
+
+lsblk
+lsblk -f
+df -T
+df -h
+
+
+Record your findings in a table.
+
+| Device/Partition | Filesystem Type | Size | Mount Point |
+| ---------------- | --------------- | ---- | ----------- |
+|                  |                 |      |             |
+
+---
+
+## Exercise 2 – Disk → Partition → Filesystem → Mount Point
+
+Using the information obtained in Exercise 1, draw the storage organization of your own Linux system.
+
+For example:
+
+Disk
+  |
+  +-- Partition
+        |
+        +-- Filesystem
+                |
+                +-- Mount Point
+
+Do not copy the example values. Use the actual values observed on your machine.
+
+Explain in 2–3 sentences the relationship between these four components.
+
+---
+
+## Exercise 3 – Explore the Root Filesystem
+
+Start from your current location.
+
+1. Determine your current working directory.
+2. Navigate to the root directory.
+3. Display the contents of the root directory.
+4. Identify all directories directly available under `/`.
+5. Determine whether hidden entries are present.
+
+
+
+## Exercise 4 – Linux Filesystem Hierarchy Investigation
+
+Investigate the following locations:
+
+
+/home
+/root
+/etc
+/var
+/var/log
+/tmp
+/usr
+/boot
+/dev
+/proc
+
+
+For each location:
+
+1. Examine its contents.
+2. Identify at least three entries, where available.
+3. Determine the likely purpose of the directory.
+
+Complete:
+
+| Directory  | Example Contents | Purpose |
+| ---------- | ---------------- | ------- |
+| `/home`    |                  |         |
+| `/root`    |                  |         |
+| `/etc`     |                  |         |
+| `/var`     |                  |         |
+| `/var/log` |                  |         |
+| `/tmp`     |                  |         |
+| `/usr`     |                  |         |
+| `/boot`    |                  |         |
+| `/dev`     |                  |         |
+| `/proc`    |                  |         |
+
+---
+
+## Exercise 5 – Find Your Home Directory
+
+Without assuming its location:
+
+1. Determine your username.
+2. Determine your home directory.
+3. Navigate to your home directory.
+4. Display its absolute path.
+5. List its normal contents.
+6. List all contents, including hidden files.
+
+
+
+## Exercise 6 – Hidden Files Investigation
+
+Examine your home directory.
+
+Compare:
+
+
+ls
+ls -a
+
+
+Identify at least 2 hidden files/directories.
+
+Answer:
+
+1. How does Linux identify a hidden file?
+2. Why does a normal `ls` not display these files?
+3. What do `.` and `..` mean?
+4. Can a hidden file still be accessed if its name is known?
+5. From a cybersecurity perspective, why should hidden files not automatically be considered safe or malicious?
+
+---
+
+## Exercise 7 – Build a Small Filesystem Hierarchy
+Explore: mkdir
+Hint: you can create this hierarchy in a single command
+
+cyber_lab/
+|
++-- evidence/
+|    +-- network/
+|    +-- system/
+|
++-- logs/
+|
++-- scripts/
+|
++-- reports/
+```
+
+Create the following files:
+
+cyber_lab/evidence/network/traffic.txt
+cyber_lab/evidence/system/processes.txt
+cyber_lab/logs/security.log
+cyber_lab/scripts/check.sh
+cyber_lab/reports/investigation.txt
+
+Use appropriate Linux commands to create the structure.
+
+Verify that the required hierarchy has been created successfully.
+Hint: tree
+Explore options 
+
+## Exercise 8 – Absolute and Relative Paths
+
+Assume your current directory is:
+
+
+~/cyber_lab
+
+
+Perform the following:
+
+1. Navigate to `evidence/network` using a relative path.
+2. Navigate to `/etc` using an absolute path.
+3. Return to your home directory using the shortest possible command.
+4. Navigate to `cyber_lab/reports`.
+5. Move one directory upward.
+6. Display the current directory after every operation.
+
+\
+* What is an absolute path?
+* What is a relative path?
+* What is the difference between `/` and `~`?
+
+
+## Exercise 9 – Identify File Types
+
+Investigate the following:
+
+
+/etc/passwd
+/etc
+/bin/bash
+/dev/null
+/proc
+
+Also investigate the files created in Exercise 7.
+
+file <filename>
+ls -l <filename>
+
+
+Classify each object.
+
+| Object         | Type |
+| -------------- | ---- |
+| `/etc/passwd`  |      |
+| `/etc`         |      |
+| `/bin/bash`    |      |
+| `/dev/null`    |      |
+| `/proc`        |      |
+| `security.log` |      |
+| `check.sh`     |      |
+
+---
+
+## Exercise 10 – Examine File Metadata
+
+Use:
+
+~/cyber_lab/reports/investigation.txt
+
+Add a small amount of text to the file.
+
+Examine it using:
+
+ls -l
+stat investigation.txt
+
+
+Identify:
+
+* Filename
+* File size
+* File type
+* Owner
+* Group
+* Inode number
+* Access time
+* Modification time
+* Change time
+
+Answer:
+
+1. What is metadata?
+2. Is metadata the same as file content?
+3. Which timestamp changes when file contents are modified?
+
+---
+
+## Exercise 11 – Explore `/etc`
+
+Investigate:
+
+/etc
+```
+
+Locate:
+passwd
+group
+hostname
+hosts
+
+Note: Without modifying any system files, examine their contents where permitted.
+
+Answer:
+
+1. What kind of information is primarily stored under `/etc`?
+2. What information does `/etc/passwd` contain?
+3. What information does `/etc/hostname` contain?
+4. Why is `/etc` security-sensitive?
+
+---
+
+## Exercise 12 – Explore Linux Log Storage
+
+Investigate:
+
+/var/log
+```
+
+Identify:
+
+* Available log files
+* Available log directories
+* Recently modified entries
+* Entries you can read
+* Entries you cannot read as a normal user
+
+Answer:
+
+1. Why does Linux maintain logs?
+2. Why are logs useful during incident investigation?
+3. Why might access to some logs be restricted?
+
+---
+
+## Exercise 13 – Investigate `/tmp`
+
+Explore `/tmp` without modifying files belonging to other users.
+
+Determine:
+
+1. Whether files/directories currently exist.
+2. Whether hidden files exist.
+3. Who owns some of the entries.
+4. Which entries were modified recently.
+
+Answer:
+
+> Why can temporary directories be relevant during a cybersecurity investigation?
+
+---
+
+## Exercise 14 – Explore the `/proc` Filesystem
+
+Investigate:
+
+/proc
+```
+
+Examine:
+
+
+cat /proc/cpuinfo
+cat /proc/meminfo
+```
+
+Then identify your current shell PID:
+
+echo $$
+```
+
+Check whether a corresponding directory exists under `/proc`.
+
+Answer:
+
+1. What information does `/proc/cpuinfo` provide?
+2. What information does `/proc/meminfo` provide?
+3. Why do directories with numbers appear inside `/proc`?
+4. Is `/proc` an ordinary disk directory?
+5. Why could `/proc` be useful during security investigation?
+
+---
+
+## Exercise 15 – Explore `/dev`
+
+
+/dev
+```
+
+Examine:
+
+ls -l /dev/null
+ls -l /dev/zero
+```
+
+Answer:
+
+1. What does `/dev` represent?
+2. Are the entries ordinary user files?
+3. Determine the file type of `/dev/null`.
+4. Why does Linux expose devices through the filesystem?
+
+---
+
+## Exercise 16 – Filesystem Space Investigation
+
+Determine:
+
+1. Total filesystem capacity.
+2. Used space.
+3. Available space.
+4. Percentage of filesystem utilization.
+5. Space occupied by your home directory.
+6. Space occupied by the `cyber_lab` directory.
+
+Use appropriate combinations of:
+
+df
+df -h
+du
+du -h
+du -sh
+
+
+Answer:
+
+> Explain the difference between `df` and `du`.
+
+---
+
+## Exercise 17 – Cybersecurity Investigation Scenario
+
+Assume that you are investigating a Linux machine after suspicious activity has been reported.
+
+You are initially asked to examine only the filesystem.
+
+Identify which of the following locations you would investigate and explain **why**:
+
+/home
+/etc
+/var/log
+/tmp
+/proc
+/dev
+/root
+
+
+For each selected location, state what type of security-relevant information you would expect to find.
+
+Submit the following:
+
+1. Commands used for each exercise.
+2. Relevant output or screenshots.
+3. Observation tables.
+4. Disk → Partition → Filesystem → Mount Point diagram.
+5. Answers to analysis questions.
+
+
+**Important:** Do not modify or delete system files while performing the exercises.
+
+
+Deadline: 29.08.2026
+
+"If I don't practice one day, I know it; two days, the critics know it; three days, the public knows it." — Jascha Heifetz
+
