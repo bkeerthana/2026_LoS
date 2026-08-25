@@ -180,6 +180,32 @@ Explore:
 [ -z "$empty" ]          # True if string is empty (zero length)
 [ -n "$str1" ]           # True if string is not empty
 
+Day:7
+grep regex 
+   + 
+   ? 
+   . 
+   {} 
+
+
+Lab3: 
+   Intro to filesystem 
+
+
+Day:8 
+Recap 
+  Filesystem 
+  Absolute path relative path
+  .. 
+  . 
+
+Redirection 
+  <  [ will teach in next class] 
+  > 
+  >> 
+  2> 
+
+
 
 Videos: 
 https://www.youtube.com/watch?v=_n5ZegzieSQ
