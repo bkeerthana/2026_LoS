@@ -205,6 +205,23 @@ Redirection
   >> 
   2> 
 
+Day:9 
+ > 1.out 2>&1
+
+Filters/ power utilities 
+cut 
+  -f 
+  -d 
+  -c 
+
+tr 
+ -d 
+ -c 
+ -s 
+
+
+
+
 
 
 Videos: 
