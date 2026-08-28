@@ -1,0 +1,132 @@
+Hard link vs. soft link 
+
+Part A — Create the links
+Create a directory named link_lab and navigate to it.
+Create a file named security.txt containing the following text:
+Linux File System Security Lab
+Confidential Security Report
+
+Create:
+a hard link named security_hard.txt
+a symbolic link named security_soft.txt
+
+List all three files using a command that displays their inode numbers.
+
+Record the inode numbers of:
+security.txt
+security_hard.txt
+security_soft.txt
+
+What difference do you observe?
+
+Part B — Examine File Metadata
+
+Use ls -l to examine the three files. Identify the file type of each file from the first character of the permission field.
+Compare the link count of the original file, hard link, and symbolic link. Explain the observed values.
+Use the stat command on all three files and record the following information:
+Parameter	Original	Hard Link	Soft Link
+Inode number			
+File type			
+Size			
+Link count			
+Permissions			
+Compare the file sizes of the original file, hard link, and symbolic link. Why might the size of the symbolic link differ from the original file?
+
+Part C — Investigate readlink
+Execute readlink on security_soft.txt. What information is displayed?
+Execute readlink on security_hard.txt. What do you observe?
+Based on your observations, explain why readlink works differently for hard links and symbolic links.
+Use:
+readlink -f security_soft.txt
+
+What does the -f option reveal?
+
+Part D — Content Modification
+Append the following line to security.txt:
+Unauthorized login detected
+
+Display the contents using all three filenames.
+
+Is the newly added content visible through both links? Explain why.
+Modify the file using security_hard.txt. Check the contents through security.txt and security_soft.txt. What do you observe?
+Part E — Rename Experiment
+Rename:
+security.txt
+
+to:
+
+incident.txt
+Try accessing the content through security_hard.txt. Does it still work?
+Try accessing the content through security_soft.txt. Does it still work?
+Use readlink security_soft.txt after renaming the original file. What path is still stored in the symbolic link?
+Explain why renaming the original file affects the symbolic link differently from the hard link.
+
+Part F — Deletion Experiment
+
+Recreate the links if necessary and then perform the following.
+
+Delete the original file.
+Check whether security_hard.txt can still be accessed.
+Check whether security_soft.txt can still be accessed.
+Use ls -l and readlink to investigate the symbolic link after deleting its target.
+What is a dangling/broken symbolic link?
+Does deleting the original filename immediately delete the underlying data when a hard link exists? Justify your answer using the link count and inode.
+
+Part G — Directory and Filesystem Behaviour
+Create a directory named evidence. Attempt to create a hard link to this directory. Record the result.
+Create a symbolic link named evidence_link pointing to the evidence directory. Was the operation successful?
+Based on your experiment, compare hard and symbolic links with respect to directory linking.
+If multiple filesystems/mount points are available in the laboratory environment, attempt to create:
+a hard link across filesystems
+a symbolic link across filesystems
+
+Final Comparison
+Based only on your experimental observations, complete the following table:
+Parameter	Hard Link	Symbolic Link
+Inode number		
+File type		
+Link count		
+File size		
+Stores target pathname?		
+readlink output		
+Effect of modifying target		
+Effect of renaming target		
+Effect of deleting target		
+Can become a dangling or broken link?		
+Directory linking		
+Cross-filesystem linking	
+
+
+sort 
+
+Suppose alerts.txt contains:
+
+192.168.1.10 admin 5
+10.0.0.8 root 12
+172.16.0.5 guest 2
+10.0.0.20 admin 8
+
+Format:
+
+IP-address   username   failed attempts
+
+Sort according to failed attempts
+Sort a list of suspicious IP addresses alphabetically.
+Display only unique suspicious IP addresses using sort.
+Sort a list of detected port numbers numerically.
+Display port numbers in descending numerical order.
+Sort usernames without considering uppercase/lowercase differences.
+From a failed-login log, count how many times each IP address occurs and display the most frequent IP first.
+Given IP,username,failed_attempts, sort records based on the number of failed attempts.
+Sort a CSV vulnerability report based on severity score.
+Extract IP addresses using grep, then use sort and uniq to identify unique IP addresses.
+Create a pipeline that displays the top 5 IP addresses responsible for the most failed login attempts.
+
+
+“Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing.”
+—Pele
+Posted on 28.08.2026
+Deadline: 11.08.2026
+
+
+user management 
