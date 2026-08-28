@@ -218,8 +218,23 @@ tr
  -d 
  -c 
  -s 
+Lab-4: 
 
+sort 
+  -n 
+  -r 
+  -t 
+  -k 
+  -M
 
+uniq
+
+inode - index node 
+ls -i 
+link 
+   - hard 
+   - soft 
+command : ln 
 
 
 
