@@ -1,0 +1,157 @@
+Part A – Basic grep and Filtering
+
+Display all lines containing the word failed.
+Display all lines containing failed, ignoring case.
+Display all lines that contain either Failed or Denied.
+Display all lines that do not contain the word INFO.
+Display all lines containing the exact word root.
+Display all occurrences of the word attack along with their line numbers.
+Count the number of lines containing ERROR.
+Display only the filenames of files whose contents contain the word malware, assuming multiple log files are available.
+Display the first five lines containing Suspicious.
+Display the last five failed-login entries.
+
+
+Part B – Regular Expression Extraction
+Extract all IPv4 addresses from the log.
+Extract all IP addresses belonging to the 10.x.x.x private network.
+Extract all addresses belonging to the 192.168.x.x network.
+Extract all email addresses.
+Extract only email addresses whose domain ends in .com.
+Extract email addresses whose username contains at least one digit.
+Extract all URLs beginning with http:// or https://.
+Extract only HTTPS URLs.
+Extract URLs ending with .php.
+Extract all CVE identifiers in the form:CVE-YYYY-NNNN
+Extract only CVEs reported for the year 2025.
+Extract all 32-character hexadecimal MD5 hashes.
+Extract all 40-character hexadecimal SHA-1 hashes.
+Extract all 64-character hexadecimal SHA-256 hashes.
+Extract all timestamps having the format:
+YYYY-MM-DD HH:MM:SS
+
+Part C – Anchors and Regex Patterns
+Display all lines beginning with a timestamp.
+Display all lines beginning with the word Suspicious.
+Display lines ending with a numeric value.
+Display lines beginning with ERROR or WARNING.
+Display lines whose first character is a digit.
+Find lines ending in .exe.
+Find lines containing filenames ending in .exe, .sh, or .pdf.
+Identify lines containing the exact word root, but not words such as rooted.
+Display blank lines in the file.
+Display all nonblank lines.
+
+Part D – Linux Filters and Pipelines
+Extract all IPv4 addresses, sort them, and remove duplicates.
+Count the number of unique IPv4 addresses present in the log.
+Extract all IP addresses and display them in sorted order.
+Determine which IP addresses appear more than once.
+Determine the IP address that occurs most frequently.
+Extract all usernames from authentication entries and display unique usernames.
+Count the number of authentication attempts associated with each username.
+Extract all HTTP status codes and determine how many times each status code occurs.
+Display the five most frequently occurring IP addresses.
+Display the three most frequently occurring usernames.
+Extract all destination ports and display them in numerical order.
+Remove duplicate port numbers.
+Count the number of unique destination ports.
+Extract all file extensions appearing in the log and determine their frequency.
+Find the five most frequently occurring domains.
+
+
+Part E – Combining grep Conditions
+Display lines containing both an IP address and the word Failed.
+Display lines containing both root and Failed.
+Display lines containing either download or upload.
+Display suspicious entries containing either .exe or .sh.
+Display lines containing a CVE identifier and an IP address.
+Display lines containing both a filename and a hash value.
+Display entries containing an IP address followed by a port.
+Display HTTP requests containing both a URL and status code 404.
+Display authentication failures but exclude entries generated from 127.0.0.1.
+Display attack-related entries but exclude informational (INFO) messages.
+
+Part F – Negative Matching
+Extract all IPv4 addresses except those beginning with 127..
+Display all log entries except successful login events.
+Display all entries that do not contain INFO, DEBUG, or SUCCESS.
+Find HTTP requests whose status code is not 200.
+Display suspicious traffic excluding connections to 192.168.x.x.
+Extract email addresses except those belonging to the organization's domain.
+
+Part G – Redirection
+Extract all IPv4 addresses and save them into:
+ips.txt
+
+Extract all email addresses and save them into:
+emails.txt
+
+Extract all URLs and save them into:
+urls.txt
+
+Extract all hashes and save them into:
+hashes.txt
+
+Extract failed-login entries and save them into:
+failed_login.txt
+
+Extract suspicious entries and append them to:
+incident_report.txt
+
+Store unique IP addresses in:
+unique_ips.txt
+
+Store IP-frequency statistics in:
+ip_frequency.txt
+
+Redirect normal output to results.txt and errors to errors.txt.
+
+Extract all domains from the log entries containing Domain accessed, convert the domain names to lowercase, sort them alphabetically, remove duplicates, and save the result in domains.txt.
+
+identify all IP addresses involved in failed-login attempts. Convert the output into a clean list containing one unique IP per line and save it as failed_login_ips.txt.
+
+Combining filters
+
+Extract all failed-login usernames and save them into:
+failed_users.txt
+
+Extract all domains and save them in lowercase into:
+domains.txt
+
+Extract all MD5 hashes, convert them to uppercase, and save them into:
+md5_hashes.txt
+
+Extract source IP addresses from failed-login records, sort them, remove duplicates, and redirect the result to:
+failed_ips.txt
+
+Create a file named clean_log.txt in which all square brackets are removed from the original log.
+
+Create normalized_log.txt by converting the complete log file to lowercase.
+
+Extract all domain names, convert them to lowercase, sort them, remove duplicates, and save them to unique_domains.txt.
+
+Find all failed-login entries and extract only the usernames.
+
+Find all failed-login entries, extract only the source IP addresses, and display them in sorted order.
+
+Extract IP addresses associated with failed logins and determine the unique IPs.
+
+Extract usernames involved in failed logins, convert them to uppercase, and remove duplicate values.
+
+Find all lines containing Domain accessed, extract only the domain names, and convert them to lowercase.
+
+Find all lines containing MD5=, extract only the MD5 hash values, and convert hexadecimal letters to uppercase.
+
+Find entries containing User-Agent:, extract the user-agent field, and convert it to lowercase.
+
+Find all CVE-related lines, extract the CVE identifiers, and convert them to lowercase.
+
+Find all entries containing .exe, extract the relevant filename, and convert it to uppercase.
+
+Extract all domains from Domain accessed entries, convert them to uppercase, sort them, and remove duplicates.
+
+
+"The key is not to prioritize what's on your schedule, but to schedule your priorities."
+                                                                       Stephen R. Covey. author
+
