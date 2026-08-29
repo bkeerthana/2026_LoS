@@ -236,6 +236,19 @@ link
    - soft 
 command : ln 
 
+Day-10: 
+Passing values to program 
+  - Hard coded 
+  - Get value from the user 
+  - Command line arguments or positional parameters 
+
+Quotes 
+  - single 
+  - double 
+  - backtick 
+
+Explore 
+  - backslash (is called escape sequence) 
 
 
 
