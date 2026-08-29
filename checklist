@@ -237,7 +237,7 @@ link
 command : ln 
 
 Day-10: 
-Passing values to program 
+Passing values to a program 
   - Hard coded 
   - Get value from the user 
   - Command line arguments or positional parameters 
