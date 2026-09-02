@@ -250,6 +250,48 @@ Quotes
 Explore 
   - backslash (is called escape sequence) 
 
+Day-11: 
+Escape Sequence 
+
+/dev/null 
+
+commandline arguments 
+$0 
+$1 ,..... $9 
+${10} 
+
+
+$# 
+
+$@ 
+$* 
+
+To show differenc between $@ and $*  
+for i in "$@" 
+do 
+echo $i
+done 
+
+sed Intro 
+sed -options sed-command filename 
+
+options 
+-e -execute multiple commands 
+-i -infile 
+
+command 
+p - print 
+d - delete
+
+concept: 
+grouping { } 
+
+Reference: 
+man sed 
+GNU sed 
+geekstuff 
+sed and awk 101 hacks - book 
+
 
 
 Videos: 
