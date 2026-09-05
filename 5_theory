@@ -1,0 +1,40 @@
+command line arguments, fileoperators, read and filters 
+
+
+Write a Bash script that accepts a filename as the first command-line argument.
+Check whether an argument is provided.
+Check whether the file exists using a file operator.
+If the file exists, display the first 5 lines using head.
+Otherwise, display an appropriate error message.
+File Type and Permission Checker
+
+Write a Bash script that accepts a path as a command-line argument and determines whether it is:
+a regular file,
+a directory,
+readable,
+writable, and
+executable.
+Display suitable messages using file operators such as -f, -d, -r, -w, and -x.
+
+
+Write a Bash script that accepts a log file as a command-line argument and searches for the words:
+failed, denied, unauthorized, and error.
+
+
+Write a Bash script that accepts a filename and checks whether:
+the file exists,
+it is a regular file,
+it is empty or non-empty.
+If it is non-empty, display the first 5 lines.
+
+
+Write a Bash script named investigate.sh that accepts a log file as a command-line argument. 
+The script must first verify that the file exists and is readable. Then ask the investigator to enter a search term.
+Display the first 5 matching records and report the total number of matching records.
+
+
+Opportunities shrink or expand in proportion to your enthusiasm.
+                                                          - James Clear
+
+Posted on :05.09.2026
+Deadline : 12.09.2026
