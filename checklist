@@ -292,6 +292,38 @@ GNU sed
 geekstuff 
 sed and awk 101 hacks - book 
 
+Day-12
+
+address  sed_command 
+address,address  sed_command 
+
+/pattern/ sed_command 
+/pattern1/,/pattern2/ sed_command 
+
+!sed_command 
+
+address  !sed_command
+
+sed commands 
+p
+d 
+y - translate 
+s - substitute 
+    flag - g
+           #g
+
+Different ways to execute sed script 
+Method 1: sed -options 'sed command' filename 
+Method 2: sed -e 'command1' -e 'command2' filename 
+Method 3: sed -f sedscript.sed filename  (Note: Write sed commands in sedscript.sed) 
+Method 4: Write sed command in bash script 
+
+
+Read the contents using while 
+ while read line 
+  do 
+      echo $line
+  done <file.txt 
 
 
 Videos: 
