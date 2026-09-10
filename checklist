@@ -325,6 +325,19 @@ Read the contents using while
       echo $line
   done <file.txt 
 
+Day-13: 
+sed 
+  a 
+  i 
+  c 
+
+  w 
+  G 
+
+ 1~2 every 2nd line from 1st line 
+
+
+
 
 Videos: 
 https://www.youtube.com/watch?v=_n5ZegzieSQ
