@@ -336,7 +336,19 @@ sed
 
  1~2 every 2nd line from 1st line 
 
+Day-14: 
+sed command
+  g
+  W 
 
+sed s command flag
+n 
+ng
+g
+i 
+w filename 
+
+sed command with regex 
 
 
 Videos: 
