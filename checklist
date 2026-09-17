@@ -378,6 +378,62 @@ ps -ef -- displau all procesess with details
 ps aux -- detailed process listing 
 
 
+Day-16 (3hrs) 
+Introduction to awk 
+when to use awk 
+
+awk syntax: 
+awk -options 'script' filename 
+awk -options 'pattern_block {action block}' filename 
+
+file 
+record 
+fields 
+
+$0 --> whole record 
+$1 --> 1st field 
+S2 --> 2nd field 
+
+BEGIN { } 
+END { } 
+
+awk -options 'BEGIN{ } /pattern block/ {action block} END{ }' filename
+awk -options 'BEGIN{ } conditional comparision {action block} END{ }' filename
+
+Performing an arithmetic operation 
+
+awk option 
+-f 
+-F  # To specify field sep 
+
+built-in variables 
+- NR 
+- NF 
+- FS 
+- RS 
+- ORS 
+- FILENAME 
+
+pattern block 
+    - conditional statements 
+    - comparison operators 
+
+FS - Field separator 
+OFS - Output field separator 
+RS  - Record separator 
+ORS - Output record separator 
+
+
+Built-in-functions
+- length()
+awk reference: 
+geekstuff
+tecmint 
+sed and awk 101 hacks 
+man awk 
+info awk 
+gnu awk
+
 
 
 Videos: 
