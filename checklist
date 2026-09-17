@@ -350,6 +350,35 @@ w filename
 
 sed command with regex 
 
+Day-15: 
+Process Vs. Program
+To check process running process 
+              top 
+              ps 
+top vs ps 
+pgrep
+
+Methods to send job to bg
+  1. &
+  2. suspend + bg 
+
+Bringing back to foreground 
+
+Kill the process by id 
+Kill the process by name 
+
+ps tree 
+
+fg 
+
+jobs 
+
+ps --- display runnning process
+ps -ef -- displau all procesess with details 
+ps aux -- detailed process listing 
+
+
+
 
 Videos: 
 https://www.youtube.com/watch?v=_n5ZegzieSQ
