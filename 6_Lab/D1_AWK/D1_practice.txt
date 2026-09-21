@@ -130,3 +130,5 @@ Salary
 Status
 
 Add a report heading using BEGIN and print the total number of selected employees using END.
+
+"It does not matter how slowly you go as long as you do not stop." — Confucius
