@@ -1,0 +1,132 @@
+AWK Pattern Block Questions
+
+For every question:
+
+
+Execute the command using employee.txt.
+
+
+Part A Numerical and String Comparisons
+
+Display the name, department, and salary of employees earning more than 70000.
+Display employees whose salary is between 60000 and 80000, including both limits.
+Display employees whose employment status is Inactive.
+Display employees belonging to the VLSI department.
+
+Part B Regular-Expression Patterns
+
+Display all records containing the word Security.
+Display employees whose names begin with the letters A, B, or C.
+Apply the regular expression only to the employee-name field.
+Display employees whose department field does not match Security.
+
+Part C Logical Patterns
+
+
+Display employees who work in the Security department and earn more than 70000.
+Display employees who belong to either the VLSI or Networking department.
+Display employees who:
+
+	Work in the VLSI department
+	Earn more than 70000
+	Have Active status
+
+Part D Conditional Pattern
+
+Department-dependent salary condition
+
+Apply different salary conditions:
+
+If the employee belongs to Security, select employees earning more than 75000.
+Otherwise, select employees earning more than 70000.
+
+Display the employee name, department, and salary.
+
+Part E Grouped Patterns
+
+
+
+Display active employees who belong to either the Security or VLSI department.
+
+The Active condition must apply to both departments.
+
+
+
+Display employees who satisfy one of these conditions:
+
+Work in Security and earn more than 80000
+Work in VLSI and earn more than 75000
+
+
+
+
+
+Display active employees who satisfy one of these conditions:
+
+Work in Security and earn more than 70000
+Work in VLSI and earn more than 75000
+
+Part F Negated Patterns
+
+Display employees whose status is not Active.
+Use an exact field comparison because the word Inactive contains the text Active.
+Display employees who do not belong to either the Security or VLSI department.
+
+Part G Range Patterns
+
+
+
+Display all records beginning with employee ID 103 and ending with employee ID 108. Include both boundary records.
+
+Display all records beginning with David and ending with Irene. Include both boundary records.
+
+Part H Built-In Variables
+
+
+Display only the first five records. Include the record number in the output.
+
+Display records numbered 4 through 9 using the built-in variable NR.
+
+
+Display only records containing exactly five fields. Print the record number and the complete record.
+
+Display only odd-numbered records using NR.
+
+Part I Arithmetic Conditions
+
+
+
+Assume each employee receives a bonus equal to 10% of the salary. Display employees whose calculated bonus exceeds 7000.
+
+Print:
+
+Employee name
+Salary
+Calculated bonus
+Question 24 Revised salary
+
+Calculate the revised salary after adding a 12% increment. Display employees whose revised salary exceeds 85000.
+
+=
+
+Calculate the monthly salary by dividing the annual salary by 12. Display employees whose monthly salary exceeds 6000.
+
+
+Part J Integrated Challenge
+
+
+Generate a report containing active employees who satisfy one of these conditions:
+
+Work in Security and earn at least 70000
+Work in VLSI and earn at least 75000
+Work in Networking and earn at least 70000
+
+The output must contain:
+
+Employee ID
+Employee name
+Department
+Salary
+Status
+
+Add a report heading using BEGIN and print the total number of selected employees using END.

@@ -1,0 +1,12 @@
+101 Alice Security 72000 Active
+102 Bob VLSI 65000 Active
+103 Carol Security 48000 Inactive
+104 David VLSI 82000 Active
+105 Eva Networking 55000 Active
+106 Frank Security 90000 Active
+107 Grace VLSI 45000 Inactive
+108 Henry Networking 76000 Active
+109 Irene Security 68000 Active
+110 John VLSI 78000 Active
+111 Kavya Networking 42000 Inactive
+112 Liam Security 85000 Active
