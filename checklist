@@ -382,7 +382,7 @@ ps -ef -- displau all procesess with details
 ps aux -- detailed process listing 
 
 
-Day-17 (3hrs) 
+Lab-FASTTRACK (3hrs) 
 Introduction to awk 
 when to use awk 
 
@@ -439,6 +439,9 @@ man awk
 info awk 
 gnu awk
 
+Day-17
+awk Revisit - pattern block 
+solving exercises
 
 
 Videos: 
