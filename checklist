@@ -431,6 +431,7 @@ ORS - Output record separator
 Built-in-functions
 - length()
 awk reference: 
+The AWK Programming Language, published in 1988 by Addison-Wesley.
 geekstuff
 tecmint 
 sed and awk 101 hacks 
