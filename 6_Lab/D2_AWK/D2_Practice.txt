@@ -1,0 +1,33 @@
+Write an AWK program for each question. Ignore the header row where appropriate.
+1. Print the source IP and event from every record.
+2. Display the time, source IP, and attempts in aligned columns using printf.
+3. Store the source IP and event in variables, then print them in a sentence.
+4. Calculate the processing time for each record if one attempt takes 2 seconds.
+5. Calculate the total number of attempts in the file.
+6. Calculate the average number of attempts per record.
+7. Count the number of Login_Failed records.
+8. Start with a review quota of 10 and decrease it by one for every HIGH or CRITICAL record. Print the remaining quota.
+9. Replace Port_Scan with Network_Scan in the event field and print every record in CSV format.
+10. Add one to the attempts field of each Login_Failed record and print every record in CSV format.
+11. Print the source IP and event when severity is HIGH and attempts are greater than 5.
+12. Print the source IP and event when severity is HIGH or CRITICAL.
+13. Use the conditional operator to label each record Repeated if attempts exceed 1; otherwise label it Single.
+14. Use the conditional operator to label each record Investigate if attempts are at least 5; otherwise label it Routine.
+15. Use if–else to print Review required for HIGH or CRITICAL records and Routine review for all other records.
+16. Use if–else if–else to classify attempts as High activity (10 or more), Moderate activity (5–9), or Low activity (fewer than 5).
+17. Use a for loop to print Check 1 through Check 5.
+18. Use a while loop to count down from 10 to 1.
+19. Use a do–while loop to count down from 10 to 1.
+20. Print each record’s source IP, event, attempts, and activity classification in aligned columns. At the end, print the total records and total attempts.
+
+Login monitoring: A security analyst considers five or more failed attempts suspicious. Write an AWK script that prints the source IP and attempts for matching Login_Failed entries. At the end, print how many suspicious entries were found.
+
+Incident summary: Write an AWK script that counts the entries in each severity category and prints a summary in an END block.
+
+Processing estimate: Assume each attempt requires 2 seconds of analyst review. Calculate the review time for each entry and the total review time for the file. Use printf to present the results neatly.
+
+Log normalization: A monitoring tool requires the event name Failed_Login instead of Login_Failed. Update the matching field and print all records as CSV. The source file should remain unchanged.
+
+Priority queue: Assign each entry a priority: Immediate for CRITICAL, Soon for HIGH, and Routine for all others. Print the time, source IP, event, and assigned priority.
+
+"Never give up. Today is hard, tomorrow will be worse, but the day after tomorrow will be sunshine." — Jack Ma
