@@ -464,9 +464,17 @@ help page
 Books 
 
 Day-20 
+Booting 
 
 Day-21
-
+su 
+sudo 
+/etc/hosts
+/etc/passwd
+/etc/groups 
+sudoers file 
+checking permission 
+   
 Day-22 
 Networking commands in Linux 
  ping 
@@ -474,5 +482,7 @@ Networking commands in Linux
  id addr 
 
 Applications of scripting in ethical hacking
+
+check: networking commands.txt 
 
 
