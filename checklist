@@ -489,3 +489,23 @@ check: networking commands.txt
 Day-23&24 
 Booting 
    - By students 
+
+Day-25
+program
+process 
+ps -ef 
+$$
+$!
+ps -o pid,ppid,stat,user
+ls /proc/pid
+cd /proc
+
+kill - pass the signal 
+kill -l 
+killall -l 
+
+trap 
+  - to catch the signal 
+
+EXIT -- signal 
+
