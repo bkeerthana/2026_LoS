@@ -509,3 +509,23 @@ trap
 
 EXIT -- signal 
 
+Day-26
+program
+process
+importance of os 
+process status 
+           -check using ps -o 
+kill 
+   to send the signal 
+
+kill -l 
+   to list the signal names 
+
+send the signal and check the process states 
+
+watch command 
+
+intro to process states 
+intro to process control block 
+
+
