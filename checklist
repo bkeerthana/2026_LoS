@@ -529,3 +529,16 @@ intro to process states
 intro to process control block 
 
 
+Day-27
+process states 
+         - 5 states 
+Process control block and process table 
+         - refer pcb.txt 
+priority check 
+command 
+  nice 
+  renice 
+
+Intro to process application memory 
+   stack Vs Heap
+   Related to buffer overflow attack 
