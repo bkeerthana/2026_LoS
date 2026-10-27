@@ -1,0 +1,113 @@
+Process Control Block (PCB)
+A Process Control Block (PCB) is a data structure maintained by the operating system to store the information needed to manage a process.
+
+When a process is created, the OS creates its PCB. It updates this information throughout the process’s lifetime.
+
+Think of the PCB as a record maintained by the OS for each process.
+
+
+Why is a PCB needed?
+A process may execute briefly, pause, and resume later. The OS needs to remember:
+- Which process it is.
+- What it was doing.
+- Where execution should resume.
+- Which resources it is using.
+- Whether it is ready, running, or waiting.
+The PCB holds or references this information.
+
+
+contents of PCB
+| Information | Purpose |
+|---|---|
+| **Process ID (PID)** | Uniquely identifies the process. |
+| **Process state** | Records whether the process is ready, running, waiting, etc. |
+| **Program counter** | Stores the address of the next instruction to execute when the process resumes. |
+| **CPU registers** | Preserve the process’s execution context, including register values and the stack pointer. |
+| **Scheduling information** | Includes priority and information used to decide when the process receives CPU time. |
+| **Memory-management information** | Describes or references the process’s address space, such as page tables. |
+| **I/O and file information** | Tracks or references open files and I/O resources. |
+| **Accounting information** | Records information such as CPU time used. |
+| **Ownership and permissions** | Identifies the user and security credentials associated with the process. |
+| **Process relationships** | Records relationships such as the parent process. |
+
+
+PCB and context switching
+A context switch occurs when the OS switches the CPU from one process to another.
+
+For example, when switching from Process A to Process B:
+1. The OS saves Process A’s CPU context, including its registers and program counter.
+2. It updates Process A’s state as appropriate.
+3. It selects Process B.
+4. It restores Process B’s saved CPU context.
+5. Process B resumes execution.
+The PCB helps a process continue from where it stopped.
+
+
+PCB in Linux
+Linux uses a kernel structure called task_struct to represent each task. It serves the role commonly described as a PCB, with some information stored in related structures.
+
+You can inspect selected process information using:
+ps -eo pid,ppid,state,pri,ni,comm
+
+| Column | Meaning |
+|---|---|
+| `PID` | Process ID |
+| `PPID` | Parent process ID |
+| `S` | Process state |
+| `PRI` | Scheduling priority |
+| `NI` | Nice value, which influences scheduling priority |
+| `COMMAND` | Command name |
+
+inspect: 
+
+echo $$
+cat /proc/$$/status
+
+check a process’s scheduling policy, priority, and nice value.
+ps -eo pid,comm,cls,rtprio,pri,ni
+
+| Column | Meaning |
+|---|---|
+| `PID` | Process ID |
+| `COMMAND` | Process name |
+| `CLS` | Scheduling class/policy |
+| `RTPRIO` | Real-time priority; usually `-` for ordinary processes |
+| `PRI` | Priority displayed by `ps` |
+| `NI` | Nice value |
+
+| Class | Policy | Meaning |
+|---|---|---|
+| `TS` | `SCHED_OTHER` | Normal time-sharing policy for ordinary processes |
+| `FF` | `SCHED_FIFO` | Real-time first-in, first-out scheduling |
+| `RR` | `SCHED_RR` | Real-time round-robin scheduling |
+| `B` | `SCHED_BATCH` | Policy intended for batch workloads |
+| `IDL` | `SCHED_IDLE` | Policy for very low-priority work |
+
+To check current shell
+chrt -p $$
+
+To run a program with higher priority
+sudo nice -n -10 ./program
+
+| Nice value | Scheduling preference |
+|---|---|
+| `-20` | Highest |
+| `-10` | Higher than default |
+| `0` | Default |
+| `10` | Lower than default |
+| `19` | Lowest |
+
+to change
+sudo renice -n -10 -p 1234
+
+ps -p 1234 -o pid,comm,cls,pri,ni
+
+
+
+| Area | What it contains | Example |
+|---|---|---|
+| **Text / Code** | Executable machine instructions | Instructions for `main()` and other functions |
+| **Initialized Data** | Global and static variables with explicit non-zero initial values | `int count = 10;` |
+| **BSS** | Global and static variables that are zero-initialized | `int total;` |
+| **Heap** | Memory allocated dynamically during execution | Memory obtained using `malloc()` |
+| **Stack** | Function-call information, parameters, and many local variables | A local variable inside `main()` |
