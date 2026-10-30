@@ -1,0 +1,82 @@
+
+Exercise 1: Process identification
+Display all running processes with their PID, PPID, owner, CPU usage, memory usage, and command.
+List only the processes belonging to the current user.
+Identify the five processes consuming the most CPU.
+Identify the five processes consuming the most memory.
+Explain why high CPU usage alone does not confirm malicious activity.
+
+Exercise 2: Parent and child processes
+Write a shell script that starts two background processes and displays their PIDs.
+Identify the PID and PPID of the shell script.
+Display the child processes created by the script.
+Explain the purpose of $$, $!, &, and wait.
+Observe what happens to the child processes when the parent script terminates.
+
+Exercise 3: Process control using kill
+Start a background process and record its PID.
+Suspend the process and verify its state.
+Resume the process and verify its state.
+Terminate the process gracefully.
+Verify that the process has terminated.
+Explain the differences between SIGSTOP, SIGCONT, SIGTERM, and SIGKILL.
+
+Exercise 4: Graceful and forced termination
+Write a monitoring script that periodically records a timestamp in a log file.
+Configure the script to record a shutdown message when it receives SIGTERM.
+Terminate the script using SIGTERM and inspect the log.
+Restart the script and terminate it using SIGKILL.
+Compare the results and explain why they differ.
+
+Exercise 5: Multiple processes using killall
+Start three instances of a lab program with a unique process name.
+Display the PID and owner of each instance.
+Terminate one instance using its PID.
+Terminate the remaining instances using killall.
+Verify that all instances have terminated.
+Explain the risk of using killall with a common process name.
+
+Exercise 6: Recurring process monitoring using cron
+Write a shell script that records the current date, time, username, and number of processes owned by the current user.
+Schedule the script to run every minute.
+Verify that the scheduled task executes successfully.
+Start additional background processes and observe changes in the log.
+Modify the schedule to run every five minutes.
+Remove the exercise entry without deleting other cron entries.
+
+Exercise 7: Cron scheduling
+Write cron entries for the following requirements:
+
+Check failed-login logs every five minutes.
+Capture a process snapshot at the beginning of every hour.
+Back up security logs daily at 2:30 AM.
+Generate a security report every weekday at 9:00 AM.
+Perform a file-integrity check every Sunday at 3:00 AM.
+Run a monitoring script every 15 minutes.
+Generate a weekly report every Monday at 8:30 AM.
+
+Exercise 8: One-time scheduling using at
+Schedule a task to record the current date and process list two minutes from now.
+Display all pending jobs.
+Inspect the commands associated with the scheduled job.
+Verify that the output file is created after execution.
+Explain why the completed job no longer appears in the pending-job list.
+
+Exercise 9: Cancelling scheduled jobs
+Schedule a harmless task to execute ten minutes from now.
+Identify its job number.
+Cancel the scheduled task.
+Verify that the task has been removed.
+Explain the difference between cancelling an at job and removing a cron entry.
+
+Exercise 10: Incident-response scenario
+An unfamiliar lab process has multiple running instances and a scheduled task that will restart it.
+
+Identify all instances of the lab process and record their PIDs and owners.
+Suspend one instance and verify its state.
+Resume the suspended instance.
+Terminate all instances of the lab process.
+Identify and inspect the scheduled restart task.
+Cancel the scheduled restart.
+Verify that no instances or restart jobs remain.
+Prepare an incident report documenting your observations, actions, and verification.
